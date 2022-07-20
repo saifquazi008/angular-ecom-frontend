@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-top-view',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopViewComponent implements OnInit {
 
+  @Input() public user: any
+
+  @Input('userList')
+  public list: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.user);
+    console.log(this.list);
   }
 
 }

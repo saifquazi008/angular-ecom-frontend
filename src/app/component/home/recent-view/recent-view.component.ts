@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-recent-view',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentViewComponent implements OnInit {
 
+  public user: User = {
+    id: 10009,
+    name: 'Marry Smith',
+    email: 'marry@gmail.com',
+    status: true,
+    address: 'Marry Street'
+  }
+
+  @Output()
+  public userEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  public submitUser() {
+    this.userEvent.emit(this.user);
+  }
 }

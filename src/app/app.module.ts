@@ -9,6 +9,7 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { AboutUsComponent } from './component/about-us/about-us.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

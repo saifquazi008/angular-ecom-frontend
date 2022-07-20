@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="container">
+    <form #loginForm="ngForm">
+        <h2>SignIn Form</h2>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" #email="ngModel" [(ngModel)]="login.email" required maxlength="20" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <div *ngIf="hasError(email)" [class]="hasError(email) ? 'error' : ''">
+                <div *ngIf="email?.errors">
+                    <span *ngIf="email?.errors?.['required']">Email is  required field</span>
+                    <!-- <span *ngIf="email?.errors?.['minlength']">Email should min 6 char long</span> -->
+                    <span *ngIf="email?.errors?.['maxlength']">Email should be max 20 char long</span>
+                    <span *ngIf="email?.errors?.['pattern']">Please enter a valid email address</span>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" #password="ngModel" [(ngModel)]="login.password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}">
+            <div *ngIf="hasError(email)" [class]="hasError(email) ? 'error' : ''">
+                <div *ngIf="email?.errors">
+                    <span *ngIf="password?.errors?.['required']">Password fied is required </span>
+                    <span *ngIf="password?.errors?.['pattern']">
+                        Please enter a valid password with atleast 8 char long <br>
+                        Lowercase letters , Uppercase letters , A Numbers , & Special characters
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" name="rememberme" id="exampleCheck1" #rememberme="ngModel" [(ngModel)]="login.rememberme">
+            <label class="form-check-label" for="exampleCheck1">Remember me </label>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit(loginForm)">Submit</button>
+    </form>
+</div>

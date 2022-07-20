@@ -8,6 +8,7 @@ import { CreateComponent } from './create/create.component';
 import { ProductsComponent } from './products.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -31,7 +32,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule ,FormsModule,ReactiveFormsModule
   ],
   exports: [RouterModule],
   providers:[DataService]

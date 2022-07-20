@@ -1,3 +1,5 @@
 <app-banner-view></app-banner-view>
 <app-top-view></app-top-view>
 <app-recent-view></app-recent-view>
+<app-top-view [user]="user" [userList]="userList"></app-top-view>
+<app-recent-view (userEvent)="receivewData($event)"></app-recent-view>

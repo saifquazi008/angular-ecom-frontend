@@ -1,14 +1,26 @@
-
-
-<div class="container">
-    <h1>Product Works</h1>
-    <p class="alert alert-primary">
-        {{ user | json}}
-    </p>
-    <p class="alert alert-primary">
-        {{ dataService.user | json}}
-    </p>
-    <p class="alert alert-primary">
-        Use is loggedIn - {{ isLoggedIn }}
-    </p>
+<button type="button" class="btn btn-info position-relative mb-3 float-right" routerLink="/products/create">
+    Create
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+      + New
+      <span class="visually-hidden">unread messages</span>
+    </span>
+</button>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    <div class="col" *ngFor="let p of products">
+        <div class="card">
+            <!-- <img src="{{p.image}}" class="card-img-top" alt="p.image"> -->
+            <div class="card-body">
+                <a href="/products/view/{{p.id}}"><h5 class="card-title">{{p.name}}</h5></a>
+                <p class="card-text">{{p.description}}</p>
+                <p class="card-text">
+                    <span class="badge rounded-pill bg-primary">Price  : {{p.price}}</span>
+                    <span class="badge rounded-pill bg-secondary">Quantity  : {{p.quantity}}</span>
+                    <span class="badge rounded-pill bg-success">Stock : {{p.stock}}</span>
+                    <span class="badge rounded-pill bg-danger">Category : {{p.productType}}</span>
+                </p>
+                <p class="card-text">Seller : {{p.seller}} </p>
+            </div>
+        </div>
+    </div>
 </div>
