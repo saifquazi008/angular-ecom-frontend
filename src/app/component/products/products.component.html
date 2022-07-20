@@ -11,7 +11,9 @@
         <div class="card">
             <!-- <img src="{{p.image}}" class="card-img-top" alt="p.image"> -->
             <div class="card-body">
-                <a href="/products/view/{{p.id}}"><h5 class="card-title">{{p.name}}</h5></a>
+                <span class="badge bg-warning text-dark btn-card" (click)="onEdit(p)">Edit</span>
+                <span class="badge bg-danger btn-card" (click)="onDelete(p.id)">Delete</span>
+                <a href="/products/view/{{p.id}}"><h5 class="card-title">{{p.name}}</h5></a>              
                 <p class="card-text">{{p.description}}</p>
                 <p class="card-text">
                     <span class="badge rounded-pill bg-primary">Price  : {{p.price}}</span>

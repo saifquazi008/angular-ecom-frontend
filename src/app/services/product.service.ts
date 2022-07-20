@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProductService {
 
     private APIURL: string = 'http://localhost:9010/api/ecom-service/products';
+    private APIURL2: string = 'http://localhost:9010/api/ecom-service/product';
 
     constructor(private httpClient: HttpClient) { }
 
@@ -21,7 +22,7 @@ export class ProductService {
     // get one product
     public getOne(id: number): any {
         //return observable
-        return this.httpClient.get(`${this.APIURL}/${id}`);
+        return this.httpClient.get(`${this.APIURL2}/${id}`);
     }
 
     //get one product
@@ -39,11 +40,11 @@ export class ProductService {
     //update one product
     public updateProduct(product: any): any {
         //return observable
-        return this.httpClient.put(`${this.APIURL}/${product.id}`, product);
+        return this.httpClient.put(`${this.APIURL}`, product);
     }
     //delete one product
     public deleteProduct(id: number): any {
         //return observable
-        return this.httpClient.delete(`${this.APIURL}/${id}`);
+        return this.httpClient.delete(`${this.APIURL2}/${id}`);
     }
 }

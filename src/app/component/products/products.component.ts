@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ProductsComponent implements OnInit {
 
   public products: any;
 
-  constructor(public productService: ProductService) {
+  constructor(public productService: ProductService, private router:Router) {
 
   }
 
@@ -19,7 +20,7 @@ export class ProductsComponent implements OnInit {
     this.getAllProduct();
   }
 
-  getAllProduct() {
+  public getAllProduct():void {
     this.productService.getProduct()
       .subscribe((data: any) => {
         this.products = data;
@@ -28,5 +29,20 @@ export class ProductsComponent implements OnInit {
       }, (error: any) => {
         console.log(error);
       });
+  }
+
+  public onEdit(pdata:any):void {
+    // console.log(product);
+    this.router.navigateByUrl("/products/create", {state: { product : pdata }})
+  }
+  public onDelete(productId:number):void {
+    this.productService.deleteProduct(productId).subscribe((data:any) =>{
+      console.log("Product is deleted successfully!",data);
+      this.getAllProduct();
+    },(error: any) => {
+      console.log(error);
+      this.getAllProduct();
+    })
+    
   }
 }

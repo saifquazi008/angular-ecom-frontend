@@ -4,8 +4,8 @@
         <!-- Product name -->
         <div class="mb-3">
             <label for="name" class="form-label">Add Product Name</label>
-            <input type="text" class="form-control" id="name" name="name" formControlName="name" id="name" autocomplete="off"
-                aria-describedby="nameHelp">
+            <input type="text" class="form-control" id="name" name="name" formControlName="name" id="name"
+                autocomplete="off" aria-describedby="nameHelp">
             <div *ngIf="hasError('name')" [class]="hasError('name') ? 'error' : ''">
                 <div *ngIf="name?.errors">
                     <span *ngIf="name?.errors?.['required']">Product Name is a required field</span>
@@ -17,7 +17,8 @@
         <!-- Product seller -->
         <div class="mb-3">
             <label for="seller" class="form-label">Product seller</label>
-            <input class="form-control" type="text" id="seller" multiple="seller" name="seller" formControlName="seller">
+            <input class="form-control" type="text" id="seller" multiple="seller" name="seller"
+                formControlName="seller">
             <div *ngIf="hasError('seller')" [class]="hasError('seller') ? 'error' : ''">
                 <div *ngIf="seller?.errors">
                     <span *ngIf="seller?.errors?.['required']">Product seller is a required field</span>
@@ -25,98 +26,84 @@
             </div>
         </div>
         <!-- Product price -->
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="text" class="form-control" name="price" formControlName="price" id="price"
-                    aria-describedby="firstNameHelp">
-                <div *ngIf="hasError('price')" [class]="hasError('price') ? 'error' : ''">
-                    <div *ngIf="price?.errors">
-                        <span *ngIf="price?.errors?.['required']">First Name is a required field</span>
-                    </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" name="price" formControlName="price" id="price"
+                aria-describedby="firstNameHelp">
+            <div *ngIf="hasError('price')" [class]="hasError('price') ? 'error' : ''">
+                <div *ngIf="price?.errors">
+                    <span *ngIf="price?.errors?.['required']">First Name is a required field</span>
                 </div>
             </div>
         </div>
         <!-- Product productType -->
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="productType">Product Type</label>
-                <input type="text" class="form-control" name="productType" formControlName="productType" id="productType"
-                    aria-describedby="firstNameHelp">
-                <div *ngIf="hasError('productType')" [class]="hasError('productType') ? 'error' : ''">
-                    <div *ngIf="productType?.errors">
-                        <span *ngIf="productType?.errors?.['required']">Product Type is a required field</span>
-                    </div>
+        <div class="form-group">
+            <label for="productType">Product Type</label>
+            <input type="text" class="form-control" name="productType" formControlName="productType" id="productType"
+                aria-describedby="firstNameHelp">
+            <div *ngIf="hasError('productType')" [class]="hasError('productType') ? 'error' : ''">
+                <div *ngIf="productType?.errors">
+                    <span *ngIf="productType?.errors?.['required']">Product Type is a required field</span>
                 </div>
             </div>
         </div>
         <!-- Product Description -->
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" name="description" formControlName="description" id="description"
-                    aria-describedby="descriptionHelp">
-                <div *ngIf="hasError('description')" [class]="hasError('description') ? 'error' : ''">
-                    <div *ngIf="description?.errors">
-                        <span *ngIf="description?.errors?.['required']">Description field is  required </span>
-                        <span *ngIf="description?.errors?.['minlength']">Description should min 5 char long</span>
-                        <span *ngIf="description?.errors?.['maxlength']">Description should be max 50 char long</span>
-                       
-                    </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" name="description" formControlName="description" id="description"
+                aria-describedby="descriptionHelp">
+            <div *ngIf="hasError('description')" [class]="hasError('description') ? 'error' : ''">
+                <div *ngIf="description?.errors">
+                    <span *ngIf="description?.errors?.['required']">Description field is required </span>
+                    <span *ngIf="description?.errors?.['minlength']">Description should min 5 char long</span>
+                    <span *ngIf="description?.errors?.['maxlength']">Description should be max 50 char long</span>
+
                 </div>
             </div>
         </div>
-         <!-- stock -->
-         <div class="col-sm-6">
-            <div class="form-group">
-                <label for="stock">Stock</label>
-                <input type="text" class="form-control" name="stock" formControlName="stock" id="stock"
-                    aria-describedby="stockHelp">
-                <div *ngIf="hasError('stock')" [class]="hasError('stock') ? 'error' : ''">
-                    <div *ngIf="stock?.errors">
-                        <span *ngIf="stock?.errors?.['required']">stock field is  required </span>
-    
-                    </div>
+        <!-- stock -->
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="text" class="form-control" name="stock" formControlName="stock" id="stock"
+                aria-describedby="stockHelp">
+            <div *ngIf="hasError('stock')" [class]="hasError('stock') ? 'error' : ''">
+                <div *ngIf="stock?.errors">
+                    <span *ngIf="stock?.errors?.['required']">stock field is required </span>
+
                 </div>
             </div>
         </div>
-         <!-- manufacturer -->
-         <div class="col-sm-6">
-            <div class="form-group">
-                <label for="manufacturer">Manufacturer</label>
-                <input type="text" class="form-control" name="manufacturer" formControlName="manufacturer" id="manufacturer"
-                    aria-describedby="manufacturerHelp">
-                <div *ngIf="hasError('manufacturer')" [class]="hasError('manufacturer') ? 'error' : ''">
-                    <div *ngIf="manufacturer?.errors">
-                        <span *ngIf="manufacturer?.errors?.['required']">manufacturer field is  required </span>
-                    </div>
+        <!-- manufacturer -->
+        <div class="form-group">
+            <label for="manufacturer">Manufacturer</label>
+            <input type="text" class="form-control" name="manufacturer" formControlName="manufacturer" id="manufacturer"
+                aria-describedby="manufacturerHelp">
+            <div *ngIf="hasError('manufacturer')" [class]="hasError('manufacturer') ? 'error' : ''">
+                <div *ngIf="manufacturer?.errors">
+                    <span *ngIf="manufacturer?.errors?.['required']">manufacturer field is required </span>
                 </div>
             </div>
         </div>
         <!-- quantity -->
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="text" class="form-control" name="quantity" formControlName="quantity" id="quantity"
-                    aria-describedby="quantityHelp">
-                <div *ngIf="hasError('quantity')" [class]="hasError('quantity') ? 'error' : ''">
-                    <div *ngIf="quantity?.errors">
-                        <span *ngIf="quantity?.errors?.['required']">quantity field is  required </span>
-                    </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="text" class="form-control" name="quantity" formControlName="quantity" id="quantity"
+                aria-describedby="quantityHelp">
+            <div *ngIf="hasError('quantity')" [class]="hasError('quantity') ? 'error' : ''">
+                <div *ngIf="quantity?.errors">
+                    <span *ngIf="quantity?.errors?.['required']">quantity field is required </span>
                 </div>
             </div>
         </div>
 
         <!-- batchNo -->
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="batchNo">Batch No</label>
-                <input type="text" class="form-control" name="batchNo" formControlName="batchNo" id="batchNo"
-                    aria-describedby="batchNoHelp">
-                <div *ngIf="hasError('batchNo')" [class]="hasError('batchNo') ? 'error' : ''">
-                    <div *ngIf="batchNo?.errors">
-                        <span *ngIf="batchNo?.errors?.['required']">batchNo field is  required </span>
-                    </div>
+        <div class="form-group">
+            <label for="batchNo">Batch No</label>
+            <input type="text" class="form-control" name="batchNo" formControlName="batchNo" id="batchNo"
+                aria-describedby="batchNoHelp">
+            <div *ngIf="hasError('batchNo')" [class]="hasError('batchNo') ? 'error' : ''">
+                <div *ngIf="batchNo?.errors">
+                    <span *ngIf="batchNo?.errors?.['required']">batchNo field is required </span>
                 </div>
             </div>
         </div>
